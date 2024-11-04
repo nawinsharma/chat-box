@@ -1,4 +1,4 @@
-## todo
+## checklists
 
 - authenticate users
 - create a room with room name and passcode
