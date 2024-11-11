@@ -2,8 +2,8 @@ import { Account, AuthOptions, ISODateString, User } from "next-auth";
 import { JWT } from "next-auth/jwt";
 import GoogleProvider from "next-auth/providers/google";
 import axios, { AxiosError } from "axios";
-import { LOGIN_URL } from "@/lib/apiAuthRoutes";
 import { redirect } from "next/navigation";
+import { LOGIN_URL } from "@/lib/apiAuthRoutes";
 
 export interface CustomSession {
   user?: CustomUser;
