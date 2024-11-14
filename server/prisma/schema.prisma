@@ -58,7 +58,6 @@ model Chats {
   name       String
   file       String?
   created_at DateTime  @default(now())
-
   @@index([created_at])
   @@map("chats")
 }

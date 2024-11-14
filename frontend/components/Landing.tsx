@@ -14,7 +14,7 @@ export default function Landing() {
                 easy to use, Login, just create a room and share the link with your friends.
             </p>
             <Link href="/dashboard">
-                <Button size="lg" className="animate-pulse">
+                <Button size="lg" className="">
                     Start Chatting
                 </Button>
             </Link>
