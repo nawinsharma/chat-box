@@ -1,6 +1,7 @@
+'use client'
 import React, { useState } from 'react';
 import { Camera } from 'lucide-react';
-import { Alert, AlertDescription, AlertTitle, AlertDialog, AlertDialogAction } from '@/components/ui/alert';
+import { AlertDialog, AlertDialogAction, AlertDialogDescription, AlertDialogOverlay, AlertDialogTitle, AlertDialogContent, AlertDialogPortal } from '@/components/ui/alert-dialog';
 
 const Dashboard: React.FC = () => {
   const [roomId, setRoomId] = useState('');
@@ -78,13 +79,13 @@ const Dashboard: React.FC = () => {
         </div>
 
         <AlertDialog open={showAlert} onOpenChange={setShowAlert}>
-          <AlertDialog.Portal>
-            <AlertDialog.Overlay className="bg-gray-900 bg-opacity-80 fixed inset-0" />
-            <AlertDialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded-lg shadow-lg p-6 max-w-md w-full">
-              <AlertDialog.Title className="text-xl font-bold mb-2">Oops!</AlertDialog.Title>
-              <AlertDialog.Description className="text-gray-400 mb-4">
+          <AlertDialogPortal>
+            <AlertDialogOverlay className="bg-gray-900 bg-opacity-80 fixed inset-0" />
+            <AlertDialogContent className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded-lg shadow-lg p-6 max-w-md w-full">
+              <AlertDialogTitle className="text-xl font-bold mb-2">Oops!</AlertDialogTitle>
+              <AlertDialogDescription className="text-gray-400 mb-4">
                 Please enter a valid Room ID and Passcode.
-              </AlertDialog.Description>
+              </AlertDialogDescription>
               <div className="flex justify-end">
                 <AlertDialogAction
                   className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md mr-2"
@@ -93,8 +94,8 @@ const Dashboard: React.FC = () => {
                   OK
                 </AlertDialogAction>
               </div>
-            </AlertDialog.Content>
-          </AlertDialog.Portal>
+            </AlertDialogContent>
+          </AlertDialogPortal>
         </AlertDialog>
       </div>
     </div>
